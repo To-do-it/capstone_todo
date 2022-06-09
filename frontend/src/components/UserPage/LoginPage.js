@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Axios from "axios";
 import { Input } from "antd";
 import styled from "styled-components";
+import NavBar from '../NavBar/NavBar';
 
 const LoginDiv = styled.div`
   padding: 3rem;
@@ -59,7 +60,9 @@ const LoginPage = () => {
   };
 
   return (
-    <LoginDiv>
+    <div>
+      <NavBar />
+      <LoginDiv>
       <h1>로그인</h1>
       <br/>
       {errors === true && <h2>Cannot log in with provided credentials</h2>}
@@ -81,6 +84,7 @@ const LoginPage = () => {
         <Input type='submit' size='large' value='로그인' />
       </form>
     </LoginDiv>
+    </div>
   );
 };
 

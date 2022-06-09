@@ -29,18 +29,17 @@
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import React, {Suspense} from 'react';
 import './App.css';
-import NavBar from './components/NavBar/NavBar';
 import LoginPage from './components/UserPage/LoginPage';
 import SignupPage from './components/UserPage/SignupPage';
+import MainPage from './components/MainPage/MainPage';
 
 function App() {
   return (
     <Suspense fallback={(<div>...</div>)}>
       <Router>
-        <NavBar />
-        <div className="App">
+        <div className="App" style={{height:"100%"}}>
             <Routes>
-              <Route path="/" element={<LoginPage />} />
+              <Route path="/" element={<MainPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
             </Routes>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Axios from 'axios';
 import { Input } from 'antd';
 import styled from 'styled-components';
+import NavBar from '../NavBar/NavBar';
 
 const SignupDiv = styled.div`
   padding: 3rem;
@@ -76,7 +77,9 @@ const SignupPage = () => {
   };
 
   return (
-    <SignupDiv>
+    <div>
+      <NavBar />
+      <SignupDiv>
       <h1>회원가입</h1>
       <br/>
       {errors === true && <h2>Cannot signup with provided credentials</h2>}
@@ -110,6 +113,7 @@ const SignupPage = () => {
         <Input type='submit' size="large" value='가입하기' />
       </form>
     </SignupDiv>
+    </div>
   );
 };
 

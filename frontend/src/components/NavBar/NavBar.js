@@ -16,6 +16,11 @@ const MenuList = styled.div`
   }
 `;
 
+const LogoImg = styled.img`
+  height: 100px;
+  width: 100px;
+`;
+
 function NavBar() {
 
   const [auth, setAuth] = useState('')
@@ -50,6 +55,7 @@ function NavBar() {
   return(
     <div>
       <MenuList>
+        <Link to="/"><LogoImg src={require('../logo.png')} alt='logo' /></Link>
       {
         auth ?
           <Menu onClick={handleLogout} items={[{label:"로그아웃",key:"logout"}]} mode="horizontal"/>
